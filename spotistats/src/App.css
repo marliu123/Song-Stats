@@ -1,0 +1,431 @@
+/* Main */
+body {
+    background-color: #121212;
+    color: #FFFFFF;
+    font-family: 'Circular Spotify', sans-serif;
+  }
+
+button.log {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    font-size: 16px;
+    padding: 8px 12px;
+    background-color: #1DB954;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+} 
+  
+h1 {
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 40px;
+}
+button {
+    background-color: #1DB954;
+    color: #FFFFFF;
+    font-family: 'Circular Spotify', sans-serif;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 500px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #1ED760;
+}
+
+
+input[type="text"] {
+    padding: 12px;
+    border-radius: 4px;
+    border: none;
+    background-color: #FFFFFF;
+    color: #121212;
+    font-family: 'Circular Spotify', sans-serif;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #1DB954;
+    color: #FFFFFF;
+    font-family: 'Circular Spotify', sans-serif;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 500px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: #1ED760;
+}
+
+.logout-button {
+    margin-top: 10px;
+    margin-right: 20px;
+    padding: 5px 10px;
+    background-color: #282828;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    opacity: 0.8;
+}
+  
+.logout-button:hover {
+    opacity: 1;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 15px;
+  }
+
+select {
+  background-color: #1DB954;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+select:hover {
+  cursor: pointer;
+  background-color: #fff;
+  color: #1DB954;
+}
+
+option {
+  background-color: #1DB954;
+  color: white;
+}
+
+/* Profile section */
+.profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    max-width: 1100px;
+    background-color: #282828;
+    color: #fff;
+    padding: 50px;
+    border-radius: 30px;
+    font-family: "Helvetica Neue", sans-serif;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: left;
+    position: relative;
+  }
+  
+  .profile-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 20px;
+    border: 5px solid #1db954;
+    position: relative;
+  }
+  
+  .blue-dot {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #0091ea;
+  }
+  
+
+  .profile-name {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+    margin-left: 40px;
+  }
+  
+  .profile-followers {
+    font-size: 24px;
+    margin: 0;
+    margin-left: 45px;
+    margin-top: 10px;
+  }
+  
+  .profile-track-status {
+    position: absolute;
+    right: 120px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50%;
+    margin-right: 67px;
+    margin-bottom: 80px;
+  }
+  
+  .blue-dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #0074E9;
+    margin-right: 10px;
+  }
+
+  .profile-track-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 40px;
+    
+  }
+  
+  .profile-track-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 210px;
+    margin-top: 50px;
+  }
+  
+  .profile-track-info p {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 20px;
+  }
+  
+  .profile-track-info span {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+/*------------------------------------------------- */
+
+/* Recently Played */
+
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #282828;
+}
+
+th {
+    background-color: #282828;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #282828;
+}
+
+tr:hover {
+    background-color: #1ED760;
+}
+
+/*------------------------------------------------- */
+
+/* Logistics */
+
+.top-tracks-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-tracks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 20px;
+}
+
+.top-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  width: 250px;
+  text-align: center;
+}
+
+.track-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.track-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #FFFFFF;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.track-artist {
+  font-size: 1rem;
+  color: #B3B3B3;
+}
+
+
+.display-options {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.display-options button {
+  background-color: #1DB954;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.display-options button:last-child {
+  margin-right: 0;
+}
+
+.display-options button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #1DB954;
+}
+
+.display-options button.active {
+  background-color: #FFFFFF;
+  color: #1DB954;
+}
+
+@media (max-width: 768px) {
+  .top-tracks {
+    justify-content: center;
+  }
+  
+  .top-track {
+    margin: 20px 10px;
+  }
+}
+
+.top-artists-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-artists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 20px;
+}
+
+.top-artist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  width: 250px;
+  text-align: center;
+}
+
+.artist-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.artist-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #FFFFFF;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.display-options {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.display-options button {
+  background-color: #1DB954;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.display-options button:last-child {
+  margin-right: 0;
+}
+
+.display-options button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #1DB954;
+}
+
+.display-options button.active {
+  background-color: #FFFFFF;
+  color: #1DB954;
+}
+
+@media (max-width: 768px) {
+  .top-artists {
+    justify-content: center;
+  }
+  
+  .top-artist {
+    margin: 20px 10px;
+  }
+}
