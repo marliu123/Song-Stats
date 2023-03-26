@@ -37,6 +37,7 @@ function App() {
     'playlist-read-collaborative',
     'ugc-image-upload'
   ];
+  
 
   useEffect(() => {
     const hash = window.location.hash;
