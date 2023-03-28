@@ -238,6 +238,7 @@ option {
     gap: 30px;
   }
   
+
   .profile-playlist {
     width: 100%;
     background-color: #222;
@@ -469,7 +470,7 @@ tr:hover {
   font-size: 1.2rem;
 }
 
-.artist-rank {
+.track-rank {
   color: #1DB954;
   font-weight: bold;
   font-size: 1.2rem;

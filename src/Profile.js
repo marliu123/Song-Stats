@@ -54,7 +54,6 @@ function Profile({ token }) {
         }
         const data = await response.json();
         const userPlaylists = data.items.filter((playlist) => playlist.owner.id === userID);
-        // Loop through the playlists and retrieve the image for each one
         for (let i = 0; i < userPlaylists.length; i++) {
           const playlistImage = await fetchUserPlaylistImage(userPlaylists[i].id);
           userPlaylists[i].images = [{ url: playlistImage }];
@@ -118,18 +117,18 @@ function Profile({ token }) {
         )}
       </div>
       {playlists && (
-          <div className="profile-playlists">
-            <h2 className="profile-playlists-header">Playlists</h2>
-            <div className="profile-playlists-container">
-              {playlists.map((playlist) => (
-                <div className="profile-playlist" key={playlist.id}>
-                  <img src={playlist.images[0].url} alt="Playlist cover" className="profile-playlist-image" />
-                  <p className="profile-playlist-name">{playlist.name}</p>
-                </div>
-              ))}
-            </div>
+        <div className="profile-playlists">
+          <h2 className="profile-playlists-header">Playlists</h2>
+          <div className="profile-playlists-container">
+            {playlists.map((playlist) => (
+              <a href={playlist.external_urls.spotify} target="_blank" rel="noopener noreferrer" className="profile-playlist" key={playlist.id}>
+                <img src={playlist.images[0].url} alt="Playlist cover" className="profile-playlist-image" />
+                <p className="profile-playlist-name">{playlist.name}</p>
+              </a>
+            ))}
           </div>
-        )}
+        </div>
+      )}
     </>
   );
 }  
