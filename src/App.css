@@ -464,16 +464,10 @@ tr:hover {
   white-space: nowrap;
 }
 
-.track-rank {
-  color: #1DB954;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.track-rank {
-  color: #1DB954;
-  font-weight: bold;
-  font-size: 1.2rem;
+.track-rank, .artist-rank {
+  color: #1DB954 !important;
+  font-weight: bold !important;
+  font-size: 1.2rem !important;
 }
 
 .display-options {
