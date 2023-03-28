@@ -56,7 +56,9 @@ function Logistics({ token }) {
             {topTracks.map((track, index) => (
               <li className="top-track" key={track.id}>
                 <div className="track-rank">{index + 1}</div>
-                <img className="track-image" src={track.album.images[0].url} alt={track.name} />
+                <a href={track.external_urls.spotify} target="_blank" rel="noopener noreferrer">
+                  <img className="track-image" src={track.album.images[0].url} alt={track.name} />
+                </a>
                 <div className="track-name">{track.name}</div>
                 <div className="track-artist">{track.artists[0].name}</div>
               </li>
@@ -71,7 +73,9 @@ function Logistics({ token }) {
             {topArtists.map((artist, index) => (
               <li className="top-artist" key={artist.id}>
                 <div className="artist-rank">{index + 1}</div>
-                <img className="artist-image" src={artist.images[0].url} alt={artist.name} />
+                <a href={artist.external_urls.spotify} target="_blank" rel="noopener noreferrer">
+                  <img className="artist-image" src={artist.images[0].url} alt={artist.name} />
+                </a>
                 <div className="artist-name">{artist.name}</div>
               </li>
             ))}
@@ -80,6 +84,7 @@ function Logistics({ token }) {
       )}
     </div>
   );  
+  
 }
 
 export default Logistics;
