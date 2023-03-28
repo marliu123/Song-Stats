@@ -45,9 +45,9 @@ function Logistics({ token }) {
         <button onClick={() => setDisplayType('artists')} className={`display-option ${displayType === 'artists' ? 'active' : ''}`}>Top Artists</button>
       </div>
       <div className="display-options">
-        <button onClick={() => setTimeRange('short_term')} className={`display-option ${timeRange === 'short_term' ? 'active' : ''}`}>Short Term</button>
-        <button onClick={() => setTimeRange('medium_term')} className={`display-option ${timeRange === 'medium_term' ? 'active' : ''}`}>Medium Term</button>
-        <button onClick={() => setTimeRange('long_term')} className={`display-option ${timeRange === 'long_term' ? 'active' : ''}`}>Long Term</button>
+        <button onClick={() => setTimeRange('short_term')} className={`display-option ${timeRange === 'short_term' ? 'active' : ''}`}>4 Weeks</button>
+        <button onClick={() => setTimeRange('medium_term')} className={`display-option ${timeRange === 'medium_term' ? 'active' : ''}`}>6 Months</button>
+        <button onClick={() => setTimeRange('long_term')} className={`display-option ${timeRange === 'long_term' ? 'active' : ''}`}>All Time</button>
       </div>
       {displayType === 'tracks' && (
         <div className="top-tracks-container">
