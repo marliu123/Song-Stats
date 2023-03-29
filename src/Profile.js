@@ -63,7 +63,7 @@ function Profile({ token }) {
         console.error(err);
       }
     };
-    
+
     const fetchUserPlaylistImage = async (playlist_id) => {
       try {
         const response = await fetch(`https://api.spotify.com/v1/playlists/${playlist_id}/images`, {
@@ -81,8 +81,8 @@ function Profile({ token }) {
         console.error(err);
         return null;
       }
-    };    
-    
+    };
+
     fetchUserData();
     fetchCurrentlyPlaying();
   }, [token]);
@@ -91,13 +91,15 @@ function Profile({ token }) {
     return <div>Loading...</div>;
   }
 
-  const { display_name, images, followers } = userData;
+  const { display_name, images, followers, external_urls } = userData;
 
   return (
     <>
       <div className="profile-container">
         <div className="profile-header">
-          <img className="profile-image" src={images[0].url} alt="Profile" />
+          <a href={userData.external_urls.spotify} target="_blank" rel="noopener noreferrer">
+            <img className="profile-image" src={images[0].url} alt="Profile" />
+          </a>
           <div>
             <h1 className="profile-name">{display_name}</h1>
             <p className="profile-followers">{followers.total} followers</p>
@@ -130,7 +132,7 @@ function Profile({ token }) {
         </div>
       )}
     </>
-  );
-}  
+  );  
+}
 
 export default Profile;
