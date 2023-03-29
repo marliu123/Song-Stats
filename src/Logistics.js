@@ -84,7 +84,6 @@ function Logistics({ token }) {
       )}
     </div>
   );  
-  
 }
 
 export default Logistics;
