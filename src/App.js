@@ -85,7 +85,7 @@ function App() {
     <div className="App">
       <h1>
         <img className="logo" src={logo} alt="Spotify logo" />
-        Spotistats
+        Songify
       </h1>
       {!token ? (
         <button className="log" onClick={handleLogin}>
