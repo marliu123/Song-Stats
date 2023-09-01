@@ -12,7 +12,7 @@ function App() {
   const [showLogistics, setShowLogistics] = useState(false);
   const [selectedOption, setSelectedOption] = useState("Select an option");
   const authEndpoint = 'https://accounts.spotify.com/authorize';
-  const redirectUri = 'https://songify-rho.vercel.app/';
+  const redirectUri = 'https://spotistats-rho.vercel.app/';
   //const redirectUri = 'http://localhost:3000/';
   const clientId = '1b71578fa02143ddac1ce48bb58fad1b';
   const scopes = [
