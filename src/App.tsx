@@ -12,8 +12,8 @@ function App() {
     Options.Profile,
   );
   const authEndpoint = "https://accounts.spotify.com/authorize";
-  const redirectUri = "https://songify-rho.vercel.app/";
-  //const redirectUri = "http://localhost:3000/";
+  //const redirectUri = "https://songify-rho.vercel.app/";
+  const redirectUri = "http://localhost:3000/";
   const clientId = "1b71578fa02143ddac1ce48bb58fad1b";
   const scopes = [
     "user-read-private",
@@ -75,32 +75,41 @@ function App() {
 
   return (
     <div className="App">
-      <h1>
+      <div className="logo-container">
         <img className="logo" src={logo} alt="Spotify logo" />
-        Songify
-      </h1>
-      {!token ? (
-        <button className="log" onClick={handleLogin}>
-          Log In
-        </button>
-      ) : (
-        <>
-          <button className="log" onClick={handleLogout}>
-            Log out
-          </button>
-          <select
-            value={selectedOption}
-            onChange={(e) => setSelectedOption(e.target.value as Options)}
-          >
+        <h1>Songify</h1>
+      </div>
+      <div className="sidebar">
+        <div className="options-container">
+          <ul className="options-list">
             {Object.values(Options).map((option) => (
-              <option key={option} value={option}>
+              <li
+                key={option}
+                className={`option-item ${
+                  selectedOption === option ? "active" : ""
+                }`}
+                onClick={() => setSelectedOption(option)}
+              >
                 {option}
-              </option>
+              </li>
             ))}
-          </select>
-          {componentsMap[selectedOption]}
-        </>
-      )}
+          </ul>
+        </div>
+      </div>
+      <div className="content">
+        {!token ? (
+          <button className="log" onClick={handleLogin}>
+            Log In
+          </button>
+        ) : (
+          <>
+            <button className="log" onClick={handleLogout}>
+              Log out
+            </button>
+            {componentsMap[selectedOption]}
+          </>
+        )}
+      </div>
     </div>
   );
 }

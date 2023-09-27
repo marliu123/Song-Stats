@@ -94,25 +94,61 @@ input[type="submit"]:hover {
     margin-right: 15px;
   }
 
-select {
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%; /* Make the sidebar take up the full height of the viewport */
+  width: 150px; /* Adjust the width as needed */
+  background-color: #333; /* Background color for the sidebar */
+  color: #fff; /* Text color for the sidebar */
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-container {
+  text-align: center;
+  margin-left: 150px;
+  color: #fff; /* Text color for the logo container */
+  padding: 20px;
+}
+
+.logo {
+  width: 50px; /* Adjust the logo size as needed */
+  margin-left: auto; /* Push the logo to the right within the logo container */
+  margin-right: auto; /* Push the logo to the right within the logo container */
+}
+
+.options-container {
+  flex-grow: 1;
+}
+
+.options-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.option-item {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px 20px;
+  color: #fff;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.option-item.active {
   background-color: #1DB954;
   color: #fff;
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 16px;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-select:hover {
-  cursor: pointer;
-  background-color: #fff;
-  color: #1DB954;
+/* Content Styles */
+.content {
+  margin-left: 150px; /* Adjust the margin to match the width of the sidebar */
+  padding: 20px; /* Adjust the content padding as needed */
 }
 
-option {
-  background-color: #1DB954;
-  color: white;
-}
 
 /* Profile section */
 .profile-container {
