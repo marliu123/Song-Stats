@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Options } from "./types";
 import "./App.css";
-import logo from "./media/whitespotifylogo.png";
+import logo from "./media/Spotify_Icon_RGB_Green.png";
 import RecentlyPlayed from "./RecentlyPlayed";
 import Profile from "./Profile";
 import Logistics from "./Logistics";
