@@ -165,9 +165,9 @@ input[type="submit"]:hover {
   position: absolute;
   top: 0;
   left: 0;
-  width: 7px; /* Adjust the width as needed */
+  width: 5px; /* Adjust the width as needed */
   height: 100%;
-  background-color: #1DB954; /* Green highlight on the left */
+  background-color: #0FFF50; /* Green highlight on the left */
 }
 
 .option-item:hover::before {
@@ -175,9 +175,9 @@ input[type="submit"]:hover {
   position: absolute;
   top: 0;
   left: 0;
-  width: 7px; /* Adjust the width as needed */
+  width: 5px; /* Adjust the width as needed */
   height: 100%;
-  background-color: #1DB954; /* Green highlight on the left */
+  background-color: #0FFF50; /* Green highlight on the left */
 }
 
 /* Content Styles */
