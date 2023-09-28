@@ -93,29 +93,6 @@ function Profile({ token }: Props) {
           </div>
         )}
       </div>
-      {playlists && (
-        <div className="profile-playlists">
-          <h2 className="profile-playlists-header">Playlists</h2>
-          <div className="profile-playlists-container">
-            {playlists.map((playlist) => (
-              <a
-                href={playlist.external_urls.spotify}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="profile-playlist"
-                key={playlist.id}
-              >
-                <img
-                  src={playlist.images[0].url}
-                  alt="Playlist cover"
-                  className="profile-playlist-image"
-                />
-                <p className="profile-playlist-name">{playlist.name}</p>
-              </a>
-            ))}
-          </div>
-        </div>
-      )}
     </>
   );
 }

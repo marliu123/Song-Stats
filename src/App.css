@@ -99,29 +99,33 @@ input[type="submit"]:hover {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%; /* Make the sidebar take up the full height of the viewport */
-  width: 150px; /* Adjust the width as needed */
-  background-color: #333; /* Background color for the sidebar */
-  color: #fff; /* Text color for the sidebar */
+  height: 100%;
+  width: 100px;
+  background-color: black;
+  color: #fff;
   display: flex;
   flex-direction: column;
 }
 
 .logo-container {
   text-align: center;
-  margin-left: 150px;
-  color: #fff; /* Text color for the logo container */
+  margin-left: 100px;
+  color: #fff;
   padding: 20px;
 }
 
 .logo {
-  width: 50px; /* Adjust the logo size as needed */
-  margin-left: auto; /* Push the logo to the right within the logo container */
-  margin-right: auto; /* Push the logo to the right within the logo container */
+  width: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .options-container {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .options-list {
@@ -132,21 +136,76 @@ input[type="submit"]:hover {
 
 .option-item {
   cursor: pointer;
-  font-size: 18px;
+  font-size: 14px; /* Adjust the font size as needed */
   padding: 10px 20px;
-  color: #fff;
+  color: #808080;
   transition: background-color 0.2s, color 0.2s;
+  position: relative; /* Create a relative positioning context */
 }
 
+/* Add some space between the icon and text */
+.option-item i {
+  margin-right: 10px;
+}
+
+/* Style the active option */
 .option-item.active {
-  background-color: #1DB954;
+  background-color: #282828;
   color: #fff;
+}
+
+.option-item:hover {
+  background-color: #282828; /* Green highlight when hovering */
+  color: #fff;
+}
+
+
+.option-item.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 7px; /* Adjust the width as needed */
+  height: 100%;
+  background-color: #1DB954; /* Green highlight on the left */
+}
+
+.option-item:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 7px; /* Adjust the width as needed */
+  height: 100%;
+  background-color: #1DB954; /* Green highlight on the left */
 }
 
 /* Content Styles */
 .content {
-  margin-left: 150px; /* Adjust the margin to match the width of the sidebar */
-  padding: 20px; /* Adjust the content padding as needed */
+  margin-left: 100px;
+  padding: 20px;
+}
+
+.github-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto; /* Push the container to the bottom */
+  padding: 20px; /* Add some padding for spacing */
+  cursor: pointer; /* Add a cursor pointer on hover */
+}
+
+/* Style the GitHub icon */
+.github-icon {
+  width: 50px; /* Adjust the icon width as needed */
+  height: 50px; /* Adjust the icon height as needed */
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out; /* Add a smooth transition for transform and color changes */
+}
+
+/* Apply the hover effect */
+.github-icon:hover {
+  transform: scale(1.1); /* Increase the size of the icon on hover */
+  
 }
 
 
@@ -547,3 +606,29 @@ tr:hover {
     margin: 20px 10px;
   }
 }
+
+/* Truncate text with ellipsis (...) */
+.track-name,
+.artist-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px; /* Adjust the max-width as needed */
+}
+
+/* Create a marquee animation on hover */
+.track-name:hover,
+.artist-name:hover {
+  animation: marquee 5s linear infinite; /* Adjust the duration (5s) as needed */
+}
+
+/* Define the marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
