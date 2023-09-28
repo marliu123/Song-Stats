@@ -94,13 +94,13 @@ function App() {
                 {option}
               </li>
             ))}
-            <div className="github-icon-container">
+          </ul>
+        </div>
+        <div className="github-icon-container">
               <a href="https://github.com/marliu123/spotistats" target="_blank" rel="noopener noreferrer">
                 <img className="github-icon" src={github} alt="GitHub" />
               </a>
             </div>
-          </ul>
-        </div>
       </div>
       <div className="content">
         {!token ? (
