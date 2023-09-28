@@ -5,7 +5,7 @@ import logo from "./media/whitespotifylogo.png";
 import RecentlyPlayed from "./RecentlyPlayed";
 import Profile from "./Profile";
 import Logistics from "./Logistics";
-import github from "./media/github-mark.png";
+import github from "./media/github-mark-white.png";
 
 function App() {
   const [token, setToken] = useState<string | null>(null);

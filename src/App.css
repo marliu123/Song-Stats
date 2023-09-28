@@ -205,7 +205,6 @@ input[type="submit"]:hover {
 /* Apply the hover effect */
 .github-icon:hover {
   transform: scale(1.1); /* Increase the size of the icon on hover */
-  
 }
 
 
