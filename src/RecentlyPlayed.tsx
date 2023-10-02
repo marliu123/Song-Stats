@@ -5,8 +5,8 @@ type Props = {
   token: string;
 };
 
-function RecentlyPlayed({ token }: Props) {
-  const [recentlyPlayed, setRecentlyPlayed] = useState<RecentlyPlayedItem[]>(
+function Recent({ token }: Props) { // Updated component name here
+  const [recentlyrePlayed, setRecentlyPlayed] = useState<RecentlyPlayedItem[]>(
     [],
   );
   const fetchData = async (url: string, headers: HeadersInit) => {
@@ -60,6 +60,7 @@ function RecentlyPlayed({ token }: Props) {
 
   return (
     <>
+    <div className="track-history">
       <table>
         <thead>
           <tr>
@@ -70,7 +71,7 @@ function RecentlyPlayed({ token }: Props) {
           </tr>
         </thead>
         <tbody>
-          {recentlyPlayed.map((item) => (
+          {recentlyrePlayed.map((item) => (
             <tr key={item.played_at}>
               <td>{item.track.name}</td>
               <td>{item.track.artists[0].name}</td>
@@ -80,8 +81,9 @@ function RecentlyPlayed({ token }: Props) {
           ))}
         </tbody>
       </table>
+      </div>
     </>
   );
 }
 
-export default RecentlyPlayed;
+export default Recent; // Updated export name here

@@ -55,7 +55,7 @@ function Profile({ token }: Props) {
   }, [token]);
 
   if (!userData) {
-    return <div>Loading...</div>;
+    return <div></div>;
   }
 
   const { display_name, images, followers } = userData;

@@ -5,7 +5,11 @@ import logo from "./media/Spotify_Icon_RGB_Green.png";
 import RecentlyPlayed from "./RecentlyPlayed";
 import Profile from "./Profile";
 import Logistics from "./Logistics";
+import ProfileIcon from "./media/user.png";
+import StatsIcon from "./media/statistics.png";
+import HistoryIcon from "./media/history.png";
 import github from "./media/github-mark-white.png";
+import Playlists from "./Playlist";
 
 function App() {
   const [token, setToken] = useState<string | null>(null);
@@ -72,6 +76,7 @@ function App() {
     "Recently Played": <RecentlyPlayed token={token!} />,
     Profile: <Profile token={token!} />,
     Logistics: <Logistics token={token!} />,
+    Playlists: <Playlists token={token!} />,
   };
 
   return (
@@ -82,19 +87,42 @@ function App() {
       </div>
       <div className="sidebar">
         <div className="options-container">
-          <ul className="options-list">
-            {Object.values(Options).map((option) => (
-              <li
-                key={option}
-                className={`option-item ${
-                  selectedOption === option ? "active" : ""
-                }`}
-                onClick={() => setSelectedOption(option)}
-              >
-                {option}
-              </li>
-            ))}
-          </ul>
+        <ul className="options-list">
+          {Object.values(Options).map((option) => (
+            <li
+              key={option}
+              className={`option-item ${
+                selectedOption === option ? "active" : ""
+              }`}
+              onClick={() => setSelectedOption(option)}
+            >
+             {option === Options.RecentlyPlayed && (
+                <div className="icon-container">
+                  <img src={HistoryIcon} alt="Recently Played" className="icon" />
+                  Recent
+                </div>
+              )}
+              {option === Options.Profile && (
+                <div className="icon-container">
+                  <img src={ProfileIcon} alt="Profile" className="icon" />
+                  {option}
+                </div>
+              )}
+              {option === Options.Logistics && (
+                <div className="icon-container">
+                  <img src={StatsIcon} alt="Logistics" className="icon" />
+                  {option}
+                </div>
+              )}
+              {option === Options.Playlists && (
+                <div className="icon-container">
+                  <img src={StatsIcon} alt="Playlist" className="icon" />
+                  {option}
+                </div>
+              )}
+            </li>
+          ))}
+        </ul>
         </div>
         <div className="github-icon-container">
               <a href="https://github.com/marliu123/spotistats" target="_blank" rel="noopener noreferrer">

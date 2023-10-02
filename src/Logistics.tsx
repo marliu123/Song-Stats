@@ -110,8 +110,12 @@ function Logistics({ token }: Props) {
                     alt={track.name}
                   />
                 </a>
-                <div className="track-name">{track.name}</div>
-                <div className="track-artist">{track.artists[0].name}</div>
+                <div className="track-name scroll-text-ellipsis">
+                  <div className="scroll-text">{track.name}</div>
+                </div>
+                <div className="track-artist">
+                  {track.artists[0].name}
+                </div>
               </li>
             ))}
           </ul>
@@ -135,7 +139,9 @@ function Logistics({ token }: Props) {
                     alt={artist.name}
                   />
                 </a>
-                <div className="artist-name">{artist.name}</div>
+                <div className="artist-name">
+                  {artist.name}
+                </div>
               </li>
             ))}
           </ul>

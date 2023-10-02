@@ -2,6 +2,7 @@ export enum Options {
   Profile = "Profile",
   Logistics = "Logistics",
   RecentlyPlayed = "Recently Played",
+  Playlists = "Playlists"
 }
 
 export interface Track {

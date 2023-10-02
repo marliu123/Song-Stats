@@ -20,7 +20,7 @@ button.log {
   
 h1 {
     color: #FFFFFF;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Circular Spotify', sans-serif;
     font-size: 48px;
     font-weight: bold;
     text-align: center;
@@ -80,7 +80,7 @@ input[type="submit"]:hover {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Circular Spotify', sans-serif;
     font-size: 14px;
     opacity: 0.8;
 }
@@ -94,18 +94,18 @@ input[type="submit"]:hover {
     margin-right: 15px;
   }
 
-/* Sidebar Styles */
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
-  width: 100px;
+  width: 95px;
   background-color: black;
   color: #fff;
   display: flex;
   flex-direction: column;
 }
+  
 
 .logo-container {
   text-align: center;
@@ -132,6 +132,9 @@ input[type="submit"]:hover {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .option-item {
@@ -139,8 +142,21 @@ input[type="submit"]:hover {
   font-size: 14px; /* Adjust the font size as needed */
   padding: 10px 20px;
   color: #808080;
-  transition: background-color 0.2s, color 0.2s;
+  transition:  color 0.2s; /* Add width and padding to the transition */
   position: relative; /* Create a relative positioning context */
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon {
+  width: 24px; /* Adjust the icon width as needed */
+  height: 24px; /* Adjust the icon height as needed */
+  margin-bottom: 5px; /* Spacing between icon and text */
+  color: gray;
 }
 
 /* Add some space between the icon and text */
@@ -148,26 +164,22 @@ input[type="submit"]:hover {
   margin-right: 10px;
 }
 
-/* Style the active option */
-.option-item.active {
+.option-item.active,
+.option-item:hover {
   background-color: #282828;
   color: #fff;
+  box-sizing: border-box; /* Include padding in the width calculation */
+  width: 100%;
 }
-
-.option-item:hover {
-  background-color: #282828; /* Green highlight when hovering */
-  color: #fff;
-}
-
-
-.option-item.active::before {
+.option-item.active::before,
+.option-item:hover::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 5px; /* Adjust the width as needed */
+  width: 5px;
   height: 100%;
-  background-color: #0FFF50; /* Green highlight on the left */
+  background-color: #0FFF50;
 }
 
 .option-item:hover::before {
@@ -220,7 +232,7 @@ input[type="submit"]:hover {
     color: #fff;
     padding: 50px;
     border-radius: 30px;
-    font-family: "Helvetica Neue", sans-serif;
+    font-family: 'Circular Spotify', sans-serif;
     margin: 0 auto;
     margin-top: 50px;
   }
@@ -366,6 +378,7 @@ input[type="submit"]:hover {
 /*------------------------------------------------- */
 
 /* Recently Played */
+
 
 table {
     border-collapse: collapse;
@@ -606,22 +619,13 @@ tr:hover {
   }
 }
 
-/* Truncate text with ellipsis (...) */
-.track-name,
-.artist-name {
+/* CSS for the scrolling text animation */
+.scroll-text {
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 200px; /* Adjust the max-width as needed */
+  width: 100%;
+  animation: marquee 8s linear infinite; /* Adjust animation duration as needed */
 }
 
-/* Create a marquee animation on hover */
-.track-name:hover,
-.artist-name:hover {
-  animation: marquee 5s linear infinite; /* Adjust the duration (5s) as needed */
-}
-
-/* Define the marquee animation */
 @keyframes marquee {
   0% {
     transform: translateX(100%);
@@ -629,5 +633,13 @@ tr:hover {
   100% {
     transform: translateX(-100%);
   }
+}
+
+/* CSS for the ellipsis text truncation */
+.scroll-text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px; /* Adjust this width as needed */
 }
 
