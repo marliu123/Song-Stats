@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { UserData, Playlist } from "./types";
+import { UserData} from "./types";
 
 type Props = {
   token: string;
@@ -8,7 +8,6 @@ type Props = {
 function Profile({ token }: Props) {
   const [userData, setUserData] = useState<UserData | null>(null);
   const [currentlyPlaying, setCurrentlyPlaying] = useState<any | null>(null);
-  const [playlists, setPlaylists] = useState<Playlist[] | null>(null);
 
   const fetchData = async (url: string, headers: HeadersInit) => {
     const response = await fetch(url, { headers });
@@ -16,15 +15,6 @@ function Profile({ token }: Props) {
       throw new Error("Response not ok");
     }
     return await response.json();
-  };
-
-  const fetchUserPlaylists = async (userID: string) => {
-    const url = `https://api.spotify.com/v1/users/${userID}/playlists?limit=50`;
-    const headers = { Authorization: "Bearer " + token };
-    const data = await fetchData(url, headers);
-    return data.items.filter(
-      (playlist: Playlist) => playlist.owner.id === userID,
-    );
   };
 
   useEffect(() => {
@@ -44,8 +34,6 @@ function Profile({ token }: Props) {
         );
         setCurrentlyPlaying(currentlyPlaying);
 
-        const userPlaylists = await fetchUserPlaylists(userData.id);
-        setPlaylists(userPlaylists);
       } catch (err) {
         console.error(err);
       }
@@ -55,7 +43,7 @@ function Profile({ token }: Props) {
   }, [token]);
 
   if (!userData) {
-    return <div></div>;
+    return <div>Loading...</div>;
   }
 
   const { display_name, images, followers } = userData;

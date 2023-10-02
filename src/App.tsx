@@ -8,8 +8,10 @@ import Logistics from "./Logistics";
 import ProfileIcon from "./media/user.png";
 import StatsIcon from "./media/statistics.png";
 import HistoryIcon from "./media/history.png";
+import PlaylistIcon from "./media/playlist.png";
 import github from "./media/github-mark-white.png";
 import Playlists from "./Playlist";
+
 
 function App() {
   const [token, setToken] = useState<string | null>(null);
@@ -111,12 +113,12 @@ function App() {
               {option === Options.Logistics && (
                 <div className="icon-container">
                   <img src={StatsIcon} alt="Logistics" className="icon" />
-                  {option}
+                  Stats
                 </div>
               )}
               {option === Options.Playlists && (
                 <div className="icon-container">
-                  <img src={StatsIcon} alt="Playlist" className="icon" />
+                  <img src={PlaylistIcon} alt="Playlist" className="icon" />
                   {option}
                 </div>
               )}
