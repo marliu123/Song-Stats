@@ -42,13 +42,16 @@ function Playlists({ token }: Props) {
   }, [token]);
 
   return (
-    <div>
+    <div className="playlist-section"> {/* Apply the playlist section styles */}
       {playlists && playlists.length > 0 ? (
         <div>
-          <h2>All Playlists</h2>
-          <ul>
+          <h2 className="playlist-title">All Playlists</h2> {/* Apply the title styles */}
+          <ul className="playlist-list"> {/* Apply the playlist list styles */}
             {playlists.map((playlist) => (
-              <li key={playlist.id}>{playlist.name}</li>
+              <li className="playlist-item" key={playlist.id}> {/* Apply the list item styles */}
+                <span className="playlist-name">{playlist.name}</span>
+                <button className="playlist-button">Play</button> {/* Apply the button styles */}
+              </li>
             ))}
           </ul>
         </div>
