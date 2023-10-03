@@ -94,7 +94,6 @@ function Logistics({ token }: Props) {
       </div>
       {displayType === "tracks" && (
         <div className="top-tracks-container">
-          <h2>Top Tracks:</h2>
           <ul className="top-tracks">
             {topTracks.map((track, index) => (
               <li className="top-track" key={track.id}>
@@ -123,7 +122,6 @@ function Logistics({ token }: Props) {
       )}
       {displayType === "artists" && (
         <div className="top-artists-container">
-          <h2>Top Artists:</h2>
           <ul className="top-artists">
             {topArtists.map((artist, index) => (
               <li className="top-artist" key={artist.id}>

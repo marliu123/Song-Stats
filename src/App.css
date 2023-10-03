@@ -596,69 +596,58 @@ tr:hover {
   max-width: 200px; /* Adjust this width as needed */
 }
 
-/* Playlist Section */
-.playlist-section {
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  font-family: 'Circular', sans-serif;
-}
+/* Playlists.css */
 
-.playlist-title {
-  font-size: 24px;
-  font-weight: bold;
-  color: #000;
-  margin-bottom: 16px;
+.playlist-section {
+  margin-top: 20px;
+  padding: 0 20px; /* Equal padding on left and right sides */
 }
 
 .playlist-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
 }
 
 .playlist-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px;
-  border-bottom: 1px solid #e0e0e0;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.playlist-item:last-child {
-  border-bottom: none;
+  background-color: #1c1c1c;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
 }
 
 .playlist-item:hover {
-  background-color: #f8f8f8;
-  transition: background-color 0.3s ease-in-out;
+  transform: translateY(-5px);
 }
 
-.playlist-name {
-  font-size: 18px;
-  color: #000;
+.playlist-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire box */
+  object-position: center; /* Center the image */
 }
 
-.playlist-owner {
-  font-size: 16px;
-  color: #777;
-}
-
-.playlist-button {
-  background-color: #1ED760;
+.playlist-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
   color: #fff;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
   font-weight: bold;
-  transition: background-color 0.3s ease-in-out;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
-.playlist-button:hover {
-  background-color: #149c4d;
-  transition: background-color 0.3s ease-in-out;
+.playlist-item:hover .playlist-title {
+  opacity: 1;
 }
