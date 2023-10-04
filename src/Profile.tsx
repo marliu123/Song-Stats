@@ -65,7 +65,6 @@ function Profile({ token }: Props) {
           </div>
           {currentlyPlaying && (
             <div className="profile-track-status">
-              <div className="blue-dot"></div>
             </div>
           )}
         </div>
