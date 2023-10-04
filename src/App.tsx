@@ -19,7 +19,7 @@ function App() {
     Options.Profile,
   );
   const authEndpoint = "https://accounts.spotify.com/authorize";
-  const redirectUri = "https://songify-rho.vercel.app/";
+  const redirectUri = "https://songstats.vercel.app/";
   //const redirectUri = "http://localhost:3000/";
   const clientId = "1b71578fa02143ddac1ce48bb58fad1b";
   const scopes = [
@@ -85,7 +85,7 @@ function App() {
     <div className="App">
       <div className="logo-container">
         <img className="logo" src={logo} alt="Spotify logo" />
-        <h1>Songify</h1>
+        <h1>Song Stats</h1>
       </div>
       <div className="sidebar">
         <div className="options-container">
