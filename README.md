@@ -7,7 +7,7 @@ Learn more about your contemporary tastes in music through viewing your top spot
 ![plot](./src/media/snapshots/Stats.png)
 
 ## View your recent track history
-![plot](./src/media/snapshots/Recent.png)
+![plot](./src/media/snapshots/Recents.png)
 
 ## View your Profile
 ![plot](./src/media/snapshots/Profile.png)
